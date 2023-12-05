@@ -65,7 +65,8 @@ class NimEnv(gym.Env):
             # Penalize for invalid actions
             print("Invalid action\n")
             reward = -5
-            self.info['action_made'] = action
+            self.info['action'] = action
+            self.info['state'] = self.state
             return self.state, reward, done, self.info
 
         # Perform action player 0
